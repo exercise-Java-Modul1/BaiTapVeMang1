@@ -12,20 +12,28 @@ public class ThemPhanTuVaoMang {
             int num = sc.nextInt();
             array[i] = num;
         }
-        System.out.print("Nhập vị trí cần chèn vào: ");
-        int n1 = sc.nextInt();
-        System.out.print("Nhập giá trị cần chèn vào: ");
-        int number = sc.nextInt();
-        for (int i = 0; i < n1 - 1; i++) {
-            array2[i] = array[i];
-        }
-        array2[n1 - 1] = number;
-        for (int j = n1; j < array2.length; j++) {
-            array2[j] = array[j - 1];
-        }
-        System.out.println("Mảng mới gồm các giá trị sau: ");
-        for (int i = 0; i < array2.length; i++) {
-            System.out.print(array2[i] + "\t");
+        while (true) {
+            System.out.print("Nhập vị trí cần chèn vào: ");
+            int n1 = sc.nextInt();
+            System.out.print("Nhập giá trị cần chèn vào: ");
+            int number = sc.nextInt();
+            if (n1 < 1 || n1 > array.length - 1) {
+                System.out.println("Không chèn được phần tử vào mảng");
+            } else {
+                for (int i = 0; i < n1 - 1; i++) {
+                    array2[i] = array[i];
+                }
+                array2[n1 - 1] = number;
+                for (int j = n1; j < array2.length; j++) {
+                    array2[j] = array[j - 1];
+                }
+                System.out.println("Mảng mới gồm các giá trị sau: ");
+                for (int i = 0; i < array2.length; i++) {
+                    System.out.print(array2[i] + "\t");
+                }
+            }
+            System.out.println();
+            System.out.println("----------------------------------------------------------");
         }
     }
 }
